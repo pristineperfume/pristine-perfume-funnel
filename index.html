@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pristine Perfume | Luxury Kannauj Attars</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#07070a;
+      --panel:#0f1016;
+      --text:#f4f3ef;
+      --muted:#bdb8ad;
+      --gold:#d7b46a;
+      --gold2:#f1d18a;
+      --line:rgba(215,180,106,.22);
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --radius: 18px;
+      --max: 1120px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:radial-gradient(900px 600px at 20% 0%, rgba(215,180,106,.12), transparent 55%), var(--bg);color:var(--text);}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:18px}
+    .topbar{
+      position:sticky;top:0;z-index:30;
+      backdrop-filter: blur(10px);
+      background: rgba(7,7,10,.65);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .brand{display:flex;flex-direction:column;line-height:1}
+    .brand b{font-family:"Playfair Display",serif;font-size:18px;letter-spacing:.4px}
+    .brand span{font-size:12px;color:var(--muted);margin-top:4px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 16px;border-radius:999px;border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(215,180,106,.20), rgba(215,180,106,.06));
+      box-shadow: 0 10px 30px rgba(215,180,106,.12);
+      font-weight:600;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .btn-dark{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:none;
+    }
+
+    .hero{padding:46px 0 18px}
+    .heroGrid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:stretch}
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .heroLeft{padding:28px}
+    .kicker{color:var(--gold2);font-weight:600;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+    h1{font-family:"Playfair Display",serif;font-size:44px;margin:12px 0 12px;letter-spacing:.2px}
+    .lead{color:var(--muted);font-size:16px;line-height:1.65;max-width:52ch}
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .badge{
+      padding:8px 10px;border-radius:999px;
+      border:1px solid rgba(215,180,106,.22);
+      background: rgba(15,16,22,.55);
+      color: var(--muted);
+      font-size:12px;
+    }
+
+    .heroRight{padding:18px;display:flex;flex-direction:column;gap:12px}
+    .shot{
+      height:260px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.08);
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.65)),
+        url("images/hero.jpg") center/cover no-repeat;
+    }
+    .note{padding:14px 14px 16px}
+    .note b{color:var(--gold2)}
+    .note p{margin:8px 0 0;color:var(--muted);line-height:1.6;font-size:13px}
+
+    .section{padding:26px 0}
+    .sectionTitle{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin:0 0 14px}
+    .sectionTitle h2{font-family:"Playfair Display",serif;margin:0;font-size:26px}
+    .sectionTitle p{margin:0;color:var(--muted);font-size:13px}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .pCard{padding:18px}
+    .pImg{
+      height:150px;border-radius:14px;border:1px solid rgba(255,255,255,.08);
+      background: url("images/product.jpg") center/cover no-repeat;
+      margin-bottom:14px;
+    }
+    .pName{font-weight:700;font-size:16px}
+    .pMeta{color:var(--muted);font-size:13px;margin-top:6px}
+    .pPrice{margin-top:10px;font-size:18px;color:var(--gold2);font-weight:700}
+    .pActions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+    .mini{padding:10px 12px;font-size:13px}
+    .divider{height:1px;background:rgba(255,255,255,.08);margin:18px 0}
+
+    .twoCol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .faq{padding:18px}
+    .q{padding:14px;border-radius:14px;border:1px solid rgba(255,255,255,.08);background: rgba(0,0,0,.18);cursor:pointer}
+    .q b{display:flex;justify-content:space-between;gap:10px}
+    .a{display:none;color:var(--muted);font-size:13px;line-height:1.6;margin-top:10px}
+    .q.open .a{display:block}
+
+    .footer{padding:22px 0 90px;color:var(--muted);font-size:12px}
+    .sticky{
+      position:fixed;left:0;right:0;bottom:0;z-index:40;
+      background: rgba(7,7,10,.72);
+      border-top:1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(10px);
+    }
+    .stickyRow{display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .stickyRow small{color:var(--muted)}
+    .onlyMobile{display:none}
+
+    @media (max-width: 920px){
+      .heroGrid{grid-template-columns:1fr}
+      h1{font-size:36px}
+      .grid{grid-template-columns:1fr}
+      .twoCol{grid-template-columns:1fr}
+      .onlyMobile{display:block}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap nav">
+      <div class="brand">
+        <b>Pristine Perfume</b>
+        <span>Luxury Kannauj Attars • Wholesale & Retail</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <a class="btn btn-dark" href="#bestsellers">Best Sellers</a>
+        <a class="btn" href="javascript:void(0)" onclick="wa('Hi, I want the latest catalogue & price list.')">WhatsApp Catalogue</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="heroGrid">
+        <div class="card heroLeft">
+          <div class="kicker">KANNauj crafted • Premium oils</div>
+          <h1>Premium attars that feel expensive—before you speak.</h1>
+          <p class="lead">
+            Handpicked profiles for gifting, personal signature, and bulk supply. Get the full price list in WhatsApp in 30 seconds.
+          </p>
+
+          <div class="ctaRow">
+            <a class="btn" href="javascript:void(0)" onclick="wa('Hi, I want to order. Please share best sellers & pricing.')">Get Best Sellers</a>
+            <a class="btn btn-dark" href="#faq">Questions?</a>
+          </div>
+
+          <div class="badges">
+            <span class="badge">Fast WhatsApp ordering</span>
+            <span class="badge">Bulk/Wholesale support</span>
+            <span class="badge">Kannauj origin</span>
+            <span class="badge">Custom labeling (optional)</span>
+          </div>
+        </div>
+
+        <div class="card heroRight">
+          <div class="shot"></div>
+          <div class="note">
+            <b>Pro tip:</b> Add your real bottle photo at <code>public_html/images/hero.jpg</code>.
+            <p>Real product photography = instant premium feel and higher conversions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="bestsellers">
+      <div class="sectionTitle">
+        <h2>Best sellers</h2>
+        <p>Tap to order directly on WhatsApp</p>
+      </div>
+
+      <div class="grid">
+        <div class="card pCard">
+          <div class="pImg"></div>
+          <div class="pName">Rose Attar</div>
+          <div class="pMeta">Popular for gifting • Long lasting</div>
+          <div class="pPrice">Ask for 500ml price</div>
+          <div class="pActions">
+            <a class="btn mini" href="javascript:void(0)" onclick="wa('Rose Attar: Please share 500ml price & availability.')">Order on WhatsApp</a>
+            <a class="btn btn-dark mini" href="javascript:void(0)" onclick="wa('Send Rose Attar notes/profile (sweet/floral/oud etc).')">Get notes</a>
+          </div>
+        </div>
+
+        <div class="card pCard">
+          <div class="pImg"></div>
+          <div class="pName">Mitti Attar (Kannauj)</div>
+          <div class="pMeta">Earthy signature • Monsoon vibe</div>
+          <div class="pPrice">Ask for 500ml price</div>
+          <div class="pActions">
+            <a class="btn mini" href="javascript:void(0)" onclick="wa('Mitti Attar: Please share 500ml price & availability.')">Order on WhatsApp</a>
+            <a class="btn btn-dark mini" href="javascript:void(0)" onclick="wa('Send Mitti Attar notes/profile.')">Get notes</a>
+          </div>
+        </div>
+
+        <div class="card pCard">
+          <div class="pImg"></div>
+          <div class="pName">Musk Safi</div>
+          <div class="pMeta">Clean • Premium • Daily wear</div>
+          <div class="pPrice">Ask for 500ml price</div>
+          <div class="pActions">
+            <a class="btn mini" href="javascript:void(0)" onclick="wa('Musk Safi: Please share 500ml price & availability.')">Order on WhatsApp</a>
+            <a class="btn btn-dark mini" href="javascript:void(0)" onclick="wa('Send Musk Safi notes/profile.')">Get notes</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="card" style="padding:18px">
+        <div class="sectionTitle" style="margin:0">
+          <h2 style="font-size:22px;margin:0">Want the complete 650+ list?</h2>
+          <p style="margin:0">Get the full pricelist PDF/CSV on WhatsApp.</p>
+        </div>
+        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="javascript:void(0)" onclick="wa('Send full pricelist (650 products) PDF/CSV + MOQ details.')">Request Full Price List</a>
+          <a class="btn btn-dark" href="javascript:void(0)" onclick="wa('Share your requirements: budget, notes, quantity. Suggest best options.')">Help me choose</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section twoCol" id="faq">
+      <div class="card faq">
+        <div class="sectionTitle" style="margin-bottom:12px">
+          <h2>FAQ</h2>
+          <p>Tap a question</p>
+        </div>
+
+        <div class="q" onclick="toggle(this)">
+          <b>Do you do wholesale/bulk? <span>+</span></b>
+          <div class="a">Yes. Share quantity + preferred notes on WhatsApp and get a quote.</div>
+        </div>
+
+        <div class="q" style="margin-top:10px" onclick="toggle(this)">
+          <b>Can you share samples/notes? <span>+</span></b>
+          <div class="a">Send your target profile (fresh/oud/floral/sweet) and get curated recommendations.</div>
+        </div>
+
+        <div class="q" style="margin-top:10px" onclick="toggle(this)">
+          <b>How to order? <span>+</span></b>
+          <div class="a">Click any WhatsApp button. Confirm item + size + address. Dispatch details shared on chat.</div>
+        </div>
+      </div>
+
+      <div class="card faq">
+        <div class="sectionTitle" style="margin-bottom:12px">
+          <h2>Brand trust</h2>
+          <p>Make it look premium</p>
+        </div>
+        <p style="color:var(--muted);line-height:1.75;font-size:13px;margin:0">
+          Add 3 things to instantly upgrade: real bottle photos, 5 customer reviews (with initials/city), and clear MOQ/shipping info.
+        </p>
+        <div class="divider"></div>
+        <a class="btn" href="javascript:void(0)" onclick="wa('I want a premium website + catalogue design. Share requirements checklist.')">Get Checklist on WhatsApp</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © <span id="y"></span> Pristine Perfume • Kannauj • WhatsApp orders only
+    </footer>
+  </main>
+
+  <div class="sticky">
+    <div class="wrap stickyRow">
+      <div>
+        <small>Fast order on WhatsApp • Get full pricelist</small>
+        <div class="onlyMobile" style="height:4px"></div>
+      </div>
+      <a class="btn" href="javascript:void(0)" onclick="wa('Send full pricelist + best sellers.')">WhatsApp Now</a>
+    </div>
+  </div>
+
+  <script>
+    const PHONE = "917985494998";
+    function wa(msg){
+      const url = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(msg);
+      window.open(url, "_blank");
+    }
+    function toggle(el){
+      el.classList.toggle("open");
+      const sign = el.querySelector("b span");
+      if(sign) sign.textContent = el.classList.contains("open") ? "−" : "+";
+    }
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
